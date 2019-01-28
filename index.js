@@ -8,9 +8,9 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 if  (msg.content === prefix + 'help') {
-msg.reply('say ' + prefix + 'yandere for a random post from https://yande.re/post')
-msg.reply('say ' + prefix + 'konachan for a random post from https://konachan.com')
-msg.reply('say ' + prefix + 'danbooru for a random post from https://danbooru.donmai.us')
+msg.reply('say ' + prefix + 'yandere for a random post from yande.re')
+msg.reply('say ' + prefix + 'konachan for a random post from konachan.com')
+msg.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
 }});
 
 client.on('message', msg => {
