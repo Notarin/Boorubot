@@ -57,7 +57,7 @@ msg.reply('request recieved');
 require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
 	function(err, res, body) {
 	var data = JSON.parse(body);
-	msg.channel.send(data['0'].sample_url)
+	msg.channel.send(data['0'].file_url)
 	});
 }
 });
