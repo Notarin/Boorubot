@@ -43,4 +43,23 @@ require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+r
 }
 });
 
+client.on('message', msg => {
+ if (msg.content.toUpperCase() === 'DANRAND') {
+	 if (msg.channel.nsfw){
+	 var rating = "e"
+	 console.log("NSFW")
+	 }
+	 else {
+	 var rating = "s"
+	 }
+console.log("request recieved");
+msg.reply('request recieved');
+require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
+	function(err, res, body) {
+	var data = JSON.parse(body);
+	msg.channel.send(data['0'].sample_url)
+	});
+}
+});
+
 client.login('NDY3MTgwMzM4Nzk2NTYwMzg1.DybHwQ.LUvws2c20FinCtyXG5fAXR8ldpg');
