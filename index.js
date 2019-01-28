@@ -63,6 +63,6 @@ require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Ar
 }
 });
 
-var TOKEN = require("./TOKEN.js")
+const TOKEN = require("./TOKEN.js")
 
 client.login(TOKEN);
