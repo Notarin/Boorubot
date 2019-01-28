@@ -15,7 +15,7 @@ client.on('message', msg => {
 client.on('message', msg => {
  if (msg.content.toUpperCase() === 'YANRAND') {
 	 if (msg.channel.nsfw = true){
-	 var rating = "q"
+	 var rating = "e"
 	 console.log("NSFW")
 	 }
 	 else {
