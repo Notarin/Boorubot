@@ -6,13 +6,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-	if (msg.content === 'ping') {
-	msg.reply('Pong!');
-	console.log("derp");
-	}
-});
-
-client.on('message', msg => {
  if (msg.content.toUpperCase() === 'YANRAND') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
@@ -24,6 +17,25 @@ client.on('message', msg => {
 console.log("request recieved");
 msg.reply('request recieved');
 require("request")("https://yande.re/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
+	function(err, res, body) {
+	var data = JSON.parse(body);
+	msg.channel.send(data['0'].sample_url)
+	});
+}
+});
+
+client.on('message', msg => {
+ if (msg.content.toUpperCase() === 'KONARAND') {
+	 if (msg.channel.nsfw){
+	 var rating = "e"
+	 console.log("NSFW")
+	 }
+	 else {
+	 var rating = "s"
+	 }
+console.log("request recieved");
+msg.reply('request recieved');
+require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
 	function(err, res, body) {
 	var data = JSON.parse(body);
 	msg.channel.send(data['0'].sample_url)
