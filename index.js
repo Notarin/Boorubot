@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
- if (msg.content === prefix + 'YANDERE') {
+ if (msg.content === prefix + 'yandere') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
@@ -26,7 +26,7 @@ require("request")("https://yande.re/post.json?limit=1&tags=order%3Arandom+ratin
 });
 
 client.on('message', msg => {
- if (msg.content === prefix + 'KONACHAN') {
+ if (msg.content === prefix + 'konachan') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
@@ -45,7 +45,7 @@ require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+r
 });
 
 client.on('message', msg => {
- if (msg.content === prefix + 'DANBOORU') {
+ if (msg.content === prefix + 'danbooru') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
