@@ -62,4 +62,6 @@ require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Ar
 }
 });
 
-client.login('TOKEN');
+var TOKEN = require(TOKEN.js)
+
+client.login(TOKEN);
