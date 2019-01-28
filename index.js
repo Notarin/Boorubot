@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = "&";
 
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
- if (msg.content.toUpperCase() === 'YANRAND') {
+ if (msg.content.toUpperCase() === prefix + 'YANDERE') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
@@ -25,7 +26,7 @@ require("request")("https://yande.re/post.json?limit=1&tags=order%3Arandom+ratin
 });
 
 client.on('message', msg => {
- if (msg.content.toUpperCase() === 'KONARAND') {
+ if (msg.content.toUpperCase() === prefix + 'KONACHAN') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
@@ -44,7 +45,7 @@ require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+r
 });
 
 client.on('message', msg => {
- if (msg.content.toUpperCase() === 'DANRAND') {
+ if (msg.content.toUpperCase() === prefix + 'DANBOORU') {
 	 if (msg.channel.nsfw){
 	 var rating = "e"
 	 console.log("NSFW")
