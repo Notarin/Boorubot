@@ -62,4 +62,4 @@ require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Ar
 }
 });
 
-client.login('NDY3MTgwMzM4Nzk2NTYwMzg1.DybHwQ.LUvws2c20FinCtyXG5fAXR8ldpg');
+client.login('TOKEN');
