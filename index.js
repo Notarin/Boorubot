@@ -15,7 +15,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === prefix + 'yandere') {
+  if (msg.content.startswith(prefix + 'yandere')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -33,7 +33,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === prefix + 'konachan') {
+  if (msg.content.startswith(prefix + 'konachan')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -51,7 +51,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === prefix + 'danbooru') {
+  if (msg.content.startswith(prefix + 'danbooru')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
