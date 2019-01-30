@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "&";
+const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
-  if (msg.content.startsWith(prefix + 'help')) {
+  if (command === 'help') {
     msg.reply('say ' + prefix + 'yandere for a random post from yande.re')
     msg.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     msg.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
