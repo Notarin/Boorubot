@@ -8,10 +8,11 @@ the things i currently have implented include:
 * pulls random post from yande.re
 * pulls random post from konachan.com
 * help command to see current features
+* specify tags in search
 
 ## Planned features
 the things i plan on including are:
-* append tags to specify ...tags
+* ~~append tags to specify ...tags~~
 * push each command to another file (if that's possible)
 * comment code
 
