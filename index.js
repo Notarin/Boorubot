@@ -19,18 +19,7 @@ client.on("message", message => {
     message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
   }
-});
-
-client.on('message', message => {
-  if (message.content.startsWith(prefix + 'help')) {
-    message.reply('say ' + prefix + 'yandere for a random post from yande.re')
-    message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
-    message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
-  }
-});
-
-client.on('message', message => {
-  if (message.content.startsWith(prefix + 'yandere')) {
+  if (command === 'yandere') {
     if (message.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -45,10 +34,7 @@ client.on('message', message => {
         message.channel.send(data['0'].sample_url)
       });
   }
-});
-
-client.on('message', message => {
-  if (message.content.startsWith(prefix + 'konachan')) {
+  if (command === 'konachan') {
     if (message.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -63,10 +49,7 @@ client.on('message', message => {
         message.channel.send(data['0'].sample_url)
       });
   }
-});
-
-client.on('message', message => {
-  if (message.content.startsWith(prefix + 'danbooru')) {
+  if (command === 'danbooru') {
     if (message.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
