@@ -96,7 +96,7 @@ client.on("message", message => {
         message.channel.send(data['0'].file_url)
       }
       else {
-        message.channel.send("no post found:(")
+        message.channel.send("either you searched with too many terms or there was no post found")
       }
       });
   }
