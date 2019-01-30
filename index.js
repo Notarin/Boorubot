@@ -20,7 +20,7 @@ client.on("message", message => {
     message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
   }
   if (command === 'test'){
-  message.reply('your command was ' + command + 'and arguements were' + args)  
+  message.reply('your command was ' + command + 'and arguements were' + args)
   }
   if (command === 'yandere') {
     if (message.channel.nsfw) {
@@ -31,6 +31,7 @@ client.on("message", message => {
     }
     console.log("request recieved");
     message.reply('request recieved');
+    let newargs = args.replace(/,/g, '+');
     require("request")("https://yande.re/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
       function(err, res, body) {
         let data = JSON.parse(body);
