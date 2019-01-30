@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === prefix + 'help') {
+  if (msg.content.startswith(prefix + 'help')) {
     msg.reply('say ' + prefix + 'yandere for a random post from yande.re')
     msg.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     msg.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
