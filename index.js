@@ -6,6 +6,15 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('message', message => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if (command === 'test') {
+    message.reply(command + 'and' + args)
+  }
+});
+
 client.on('message', msg => {
   if (msg.content.startsWith(prefix + 'help')) {
     msg.reply('say ' + prefix + 'yandere for a random post from yande.re')
