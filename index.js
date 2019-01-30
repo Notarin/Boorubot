@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "&";
-const args = msg.content.slice(prefix.length).trim().split(/ +/g);
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 
 client.on('ready', () => {
