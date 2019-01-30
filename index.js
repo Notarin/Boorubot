@@ -19,8 +19,8 @@ client.on("message", message => {
     message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
   }
-  if (command === 'test'){
-  message.reply('your command was ' + command + 'and arguements were' + args)
+  if (command === 'test') {
+    message.reply('your command was ' + command + 'and arguements were' + args)
   }
   if (command === 'yandere') {
     switch (message.channel.nsfw) {
@@ -41,24 +41,23 @@ client.on("message", message => {
       function(err, res, body) {
         let data = JSON.parse(body);
         if (data['0'] !== undefined) {
-        message.channel.send(data['0'].sample_url)
-      }
-      else {
-        message.channel.send("no post found:(")
-      }
+          message.channel.send(data['0'].sample_url)
+        } else {
+          message.channel.send("no post found:(")
+        }
       });
   }
   if (command === 'konachan') {
     switch (message.channel.nsfw) {
-  case true:
-    var rating = "e";
-    console.log("nsfw");
-    break;
-  case false:
-    var rating = "s";
-    console.log("sfw");
-    break;
-}
+      case true:
+        var rating = "e";
+        console.log("nsfw");
+        break;
+      case false:
+        var rating = "s";
+        console.log("sfw");
+        break;
+    }
     console.log("request recieved");
     message.reply('request recieved');
     let strargs = args.toString();
@@ -67,24 +66,23 @@ client.on("message", message => {
       function(err, res, body) {
         let data = JSON.parse(body);
         if (data['0'] !== undefined) {
-        message.channel.send(data['0'].sample_url)
-      }
-      else {
-        message.channel.send("no post found:(")
-      }
+          message.channel.send(data['0'].sample_url)
+        } else {
+          message.channel.send("no post found:(")
+        }
       });
   }
   if (command === 'danbooru') {
     switch (message.channel.nsfw) {
-  case true:
-    var rating = "e";
-    console.log("nsfw");
-    break;
-  case false:
-    var rating = "s";
-    console.log("sfw");
-    break;
-}
+      case true:
+        var rating = "e";
+        console.log("nsfw");
+        break;
+      case false:
+        var rating = "s";
+        console.log("sfw");
+        break;
+    }
     console.log("request recieved");
     message.reply('request recieved');
     let strargs = args.toString();
@@ -93,11 +91,10 @@ client.on("message", message => {
       function(err, res, body) {
         let data = JSON.parse(body);
         if (data['0'] !== undefined) {
-        message.channel.send(data['0'].file_url)
-      }
-      else {
-        message.channel.send("either you searched with too many terms or there was no post found")
-      }
+          message.channel.send(data['0'].file_url)
+        } else {
+          message.channel.send("either you searched with too many terms or there was no post found")
+        }
       });
   }
 });
