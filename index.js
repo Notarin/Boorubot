@@ -14,7 +14,7 @@ client.on("message", message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === 'help')) {
+  if (command === 'help') {
     message.reply('say ' + prefix + 'yandere for a random post from yande.re')
     message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
