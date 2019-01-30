@@ -49,33 +49,55 @@ client.on("message", message => {
       });
   }
   if (command === 'konachan') {
-    if (message.channel.nsfw) {
-      let rating = "e"
-      console.log("NSFW")
-    } else {
-      let rating = "s"
-    }
+    switch (message.channel.nsfw) {
+  case true:
+    var rating = "e";
+    console.log("nsfw");
+    break;
+  case false:
+    var rating = "s";
+    console.log("sfw");
+    break;
+}
     console.log("request recieved");
     message.reply('request recieved');
-    require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
+    let strargs = args.toString();
+    let newargs = strargs.replace(/,/g, '+');
+    require("request")("https://konachan.com/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating + "+" + newargs,
       function(err, res, body) {
         let data = JSON.parse(body);
+        if (data['0'] !== undefined) {
         message.channel.send(data['0'].sample_url)
+      }
+      else {
+        message.channel.send("no post found:(")
+      }
       });
   }
   if (command === 'danbooru') {
-    if (message.channel.nsfw) {
-      let rating = "e"
-      console.log("NSFW")
-    } else {
-      let rating = "s"
-    }
+    switch (message.channel.nsfw) {
+  case true:
+    var rating = "e";
+    console.log("nsfw");
+    break;
+  case false:
+    var rating = "s";
+    console.log("sfw");
+    break;
+}
     console.log("request recieved");
     message.reply('request recieved');
-    require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Arandom+rating%3A" + rating,
+    let strargs = args.toString();
+    let newargs = strargs.replace(/,/g, '+');
+    require("request")("https://danbooru.donmai.us/posts.json?limit=1&tags=order%3Arandom+rating%3A" + rating + "+" + newargs,
       function(err, res, body) {
         let data = JSON.parse(body);
+        if (data['0'] !== undefined) {
         message.channel.send(data['0'].file_url)
+      }
+      else {
+        message.channel.send("no post found:(")
+      }
       });
   }
 });
