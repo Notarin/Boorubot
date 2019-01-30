@@ -31,7 +31,8 @@ client.on("message", message => {
     }
     console.log("request recieved");
     message.reply('request recieved');
-    let newargs = args.replace(/,/g, '+');
+    let strargs = args.toString();
+    let newargs = strargs.replace(/,/g, '+');
     require("request")("https://yande.re/post.json?limit=1&tags=order%3Arandom+rating%3A" + rating + "+" + newargs,
       function(err, res, body) {
         let data = JSON.parse(body);
