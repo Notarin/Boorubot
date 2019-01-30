@@ -25,11 +25,11 @@ client.on("message", message => {
   if (command === 'yandere') {
     switch (message.channel.nsfw) {
       case true:
-        let rating = "e";
+        var rating = "e";
         console.log("nsfw");
         break;
       case false:
-        let rating = "s";
+        var rating = "s";
         console.log("sfw");
         break;
     }
