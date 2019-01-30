@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content.startswith(prefix + 'help')) {
+  if (msg.content.startsWith(prefix + 'help')) {
     msg.reply('say ' + prefix + 'yandere for a random post from yande.re')
     msg.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     msg.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
@@ -15,7 +15,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.startswith(prefix + 'yandere')) {
+  if (msg.content.startsWith(prefix + 'yandere')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -33,7 +33,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.startswith(prefix + 'konachan')) {
+  if (msg.content.startsWith(prefix + 'konachan')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
@@ -51,7 +51,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.startswith(prefix + 'danbooru')) {
+  if (msg.content.startsWith(prefix + 'danbooru')) {
     if (msg.channel.nsfw) {
       let rating = "e"
       console.log("NSFW")
