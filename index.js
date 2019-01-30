@@ -19,6 +19,9 @@ client.on("message", message => {
     message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
     message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
   }
+  if (command === 'test'){
+  message.reply('your command was ' + command + 'and arguements were' + args)  
+  }
   if (command === 'yandere') {
     if (message.channel.nsfw) {
       let rating = "e"
