@@ -11,7 +11,7 @@ client.on("message", message => {
   // This is where we'll put our code.
   if (message.content.indexOf(prefix) !== 0) return;
 
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   if(command === 'ping') {
