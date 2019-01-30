@@ -23,11 +23,15 @@ client.on("message", message => {
   message.reply('your command was ' + command + 'and arguements were' + args)
   }
   if (command === 'yandere') {
-    if (message.channel.nsfw) {
-      let rating = "e"
-      console.log("NSFW")
-    } else {
-      let rating = "s"
+    switch (message.channel.nsfw) {
+      case true:
+        let rating = "e";
+        console.log("nsfw");
+        break;
+      case false:
+        let rating = "s";
+        console.log("sfw");
+        break;
     }
     console.log("request recieved");
     message.reply('request recieved');
