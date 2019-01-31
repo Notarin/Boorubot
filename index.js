@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const prefix = "&";
 const conf = require("./config.json");
 
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
