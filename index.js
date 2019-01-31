@@ -4,8 +4,6 @@ const client = new Discord.Client();
 const prefix = "&";
 const conf = require("./config.json");
 
-//test commit
-
 //say bot name on boot
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
