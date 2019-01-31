@@ -1,7 +1,6 @@
 //grab nodes
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "&";
 const conf = require("./config.json");
 
 //say bot name on boot
@@ -14,15 +13,15 @@ client.on("message", message => {
   //if its a message from a bot, quit
   if (message.author.bot) return;
   //if it doesnt have the prefix, quit
-  if (message.content.indexOf(prefix) !== 0) return;
+  if (message.content.indexOf(conf.prefix) !== 0) return;
   //splits the message into the command and arguements
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(conf.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   //help command
   if (command === 'help') {
-    message.reply('say ' + prefix + 'yandere for a random post from yande.re')
-    message.reply('say ' + prefix + 'konachan for a random post from konachan.com')
-    message.reply('say ' + prefix + 'danbooru for a random post from danbooru.donmai.us')
+    message.reply('say ' + conf.prefix + 'yandere for a random post from yande.re')
+    message.reply('say ' + conf.prefix + 'konachan for a random post from konachan.com')
+    message.reply('say ' + conf.prefix + 'danbooru for a random post from danbooru.donmai.us')
   }
   //test command to see both the command and arguments
   if (command === 'test') {
