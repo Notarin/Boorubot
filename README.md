@@ -14,7 +14,7 @@ the things i currently have implented include:
 the things i plan on including are:
 * ~~append tags to specify ...tags~~
 * push each command to another file (if that's possible)
-* comment code
+* ~~comment code~~
 
 ## Features I'll never add
 or at least any time soon...
