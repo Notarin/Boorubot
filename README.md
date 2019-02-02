@@ -19,3 +19,4 @@ the things i plan on including are:
 ## Features I'll never add
 or at least any time soon...
 * adding apis via discord
+* adding sankaku complex
