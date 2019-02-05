@@ -113,13 +113,13 @@ client.on("message", message => {
         if (data['0'] !== undefined) {
           message.channel.send(data['0'].file_url)
         } else {
-            // danbooru restrics its api to two tags
+          // danbooru restrics its api to two tags
           message.channel.send("either you searched with too many terms or there was no post found")
         }
       });
   }
   if (message.content.startsWith(config.prefix + "eval")) {
-    if(message.author.id !== config.ownerID) return;
+    if (message.author.id !== config.ownerID) return;
     try {
       const code = args.join(" ");
       let evaled = eval(code);
@@ -127,7 +127,9 @@ client.on("message", message => {
       if (typeof evaled !== "string")
         evaled = require("util").inspect(evaled);
 
-      message.channel.send(clean(evaled), {code:"xl"});
+      message.channel.send(clean(evaled), {
+        code: "xl"
+      });
     } catch (err) {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
